@@ -1,0 +1,32 @@
+.category{
+    display:flex;
+    flex-direction: column;
+    min-width: 250px;
+    max-height:550px;
+    border-radius: 5px;
+    background-color: #E4E4E4;
+    padding:5px;
+    margin-right:10px;
+}
+.header-category{
+    padding:5px;
+    font-weight:bold;
+}
+.content-category{
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding:5px;
+}
+.task{
+    height:80px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin-bottom: 5px;
+    margin-top:5px;
+    padding:10px;
+}
+
+.add-task{
+    min-width:60%;
+    color: #ffffff;
+}

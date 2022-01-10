@@ -1,0 +1,37 @@
+.header{
+    height:50px;
+    background-color: #172B4D;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    & div{
+        display:flex;
+        align-items: center;
+    }
+}
+p{
+    margin:0px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    height:100%;
+    & p{
+        font-weight: bold;
+        font-size: 25px;
+    }
+    & img{
+        height:100%;
+    }
+}
+.search{
+    & input {
+        border-radius: 10px;
+        padding:5px;
+    }
+}
+.account{
+    padding-right:10px
+}
+

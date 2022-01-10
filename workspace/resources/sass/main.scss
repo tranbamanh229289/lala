@@ -1,0 +1,62 @@
+.main{
+    flex:1;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: #89b0e1;
+    padding:10px;
+    overflow-x: auto;
+}
+
+.header-main{
+    position: relative;
+    display:flex;
+    padidng:20px;
+    color:#ffffff;
+    padding-bottom: 10px;
+    & .btn{
+        margin-right:5px;
+        color:#ffffff;
+        height:40px;
+        background-color: #172B4D;
+    }
+    & input{
+        margin-right:5px;
+    }
+    & input:focus{
+        border: blue;
+    }
+    & div{
+        margin-right:5px;
+        color: #172B4D;
+    }
+}
+.name-project{
+    font-weight: bold;
+    font-size: 20px;
+}
+.categories{
+    flex:1;
+    overflow-x:auto;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius:5px;
+    opacity: 0.5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #918f8f;
+    opacity:0.5;
+    border-radius:5px;
+}
+
+
+

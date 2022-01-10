@@ -1,0 +1,19 @@
+* {
+    margin:0px;
+    padding:0px;
+    font-size: 17px;
+}
+.wrapper{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    color: #ffffff;
+}
+.home{
+    flex:1;
+    background-image: url(/image/home.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
