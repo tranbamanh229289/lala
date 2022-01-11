@@ -31,10 +31,10 @@ export const updateNameTaskAction = (id, data) =>postAction('put', `api/tasks/${
 export const deleteTaskAction = (id) => getAction('delete', `api/tasks/${id}`, requestingTask, deleteTaskSuccess,
     requestTaskError);
 
-export const updateDescriptionAction = (id, data)=> postAction('put', `api/description/${id}`, data, requestingTask,
+export const updateDescriptionAction = (id, data)=> postAction('put', `api/descriptions/${id}`, data, requestingTask,
     updateDescriptionSuccess, requestTaskError);
 
-export const updateTimeAction = (id, data)=>postAction('put', `api/time/${id}`, data, requestingTask,
+export const updateTimeAction = (id, data)=>postAction('put', `api/times/${id}`, data, requestingTask,
     updateTimeSuccess, requestTaskError);
 
 export const getUserNames = (id) => getAction('get', `api/tasks/getUserNames/${id}`)

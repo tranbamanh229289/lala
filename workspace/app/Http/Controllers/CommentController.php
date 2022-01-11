@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Todo_list;
-use App\Services\TodoListsService;
 use Illuminate\Http\Request;
+use App\Services\CommentService;
 
-class TodoListsController extends Controller
+class CommentController extends Controller
 {
-    protected $todoListsService;
-    public function __construct(TodoListsService $todoListsService)
-    {
-        $this->todoListsService = $todoListsService;
+    protected $commentService;
+    public function __construct(CommentService $commentService){
+        $this->commentService= $commentService;
     }
     /**
      * Display a listing of the resource.
@@ -20,7 +18,7 @@ class TodoListsController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -41,7 +39,7 @@ class TodoListsController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->todoListsService->store($request);
+        return $this->commentService->store($request);
     }
 
     /**
@@ -52,7 +50,7 @@ class TodoListsController extends Controller
      */
     public function show($id)
     {
-        return $this->todoListsService->show($id);
+        return $this->commentService->show($id);
     }
 
     /**
@@ -75,7 +73,7 @@ class TodoListsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $this->todoListsService->update($request, $id);
+        return $this->commentService->update($request,$id);
     }
 
     /**
@@ -86,6 +84,8 @@ class TodoListsController extends Controller
      */
     public function destroy($id)
     {
-        return $this->todoListsService->destroy($id);
+        return $this->commentService->destroy($id);
+
     }
+
 }

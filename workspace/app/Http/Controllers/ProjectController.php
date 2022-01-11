@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\TasksService;
+use App\Services\ProjectService;
 use Illuminate\Http\Request;
 
-class TasksController extends Controller
+class ProjectController extends Controller
 {
-    protected $tasksService;
-    public function __construct(TasksService $tasksService)
+    protected $projectService;
+
+    public function __construct(ProjectService $projectService)
     {
-        $this->tasksService = $tasksService;
+        $this->projectService = $projectService;
     }
     /**
      * Display a listing of the resource.
@@ -19,7 +20,7 @@ class TasksController extends Controller
      */
     public function index()
     {
-
+        return $this->projectService->index();
     }
 
     /**
@@ -40,7 +41,7 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->tasksService->store($request);
+        return $this->projectService->store($request);
     }
 
     /**
@@ -51,7 +52,7 @@ class TasksController extends Controller
      */
     public function show($id)
     {
-        return $this->tasksService->show($id);
+        return $this->projectService->show($id);
     }
 
     /**
@@ -62,7 +63,7 @@ class TasksController extends Controller
      */
     public function edit($id)
     {
-
+        //
     }
 
     /**
@@ -74,7 +75,7 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $this->tasksService->update($request, $id);
+        return $this->projectService->update($request, $id);
     }
 
     /**
@@ -85,6 +86,6 @@ class TasksController extends Controller
      */
     public function destroy($id)
     {
-        return $this->tasksService->destroy($id);
+        return $this->projectService->destroy($id);
     }
 }

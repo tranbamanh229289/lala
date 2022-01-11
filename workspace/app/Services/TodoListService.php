@@ -6,7 +6,7 @@ use App\Models\Todo_list;
 use App\Models\Task;
 use App\Models\Project;
 
-class TodoListsService
+class TodoListService
 {
     public function show($id)
     {

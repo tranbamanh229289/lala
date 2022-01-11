@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\MembersService;
+use App\Http\Requests\MemberRequest;
+use App\Services\MemberService;
 use Illuminate\Http\Request;
 
-class MembersTaskController extends Controller
+class MemberProjectController extends Controller
 {
-    protected $membersService;
-    public function __construct(MembersService $membersService)
+    protected $memberService;
+    public function __construct(MemberService $memberService)
     {
-        $this->membersService = $membersService;
+        $this->memberService = $memberService;
     }
     /**
      * Display a listing of the resource.
@@ -38,9 +39,9 @@ class MembersTaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MemberRequest $request)
     {
-        return $this->membersService->storeMemberTask($request);
+        return $this->memberService->storeMemberProject($request);
     }
 
     /**
@@ -85,6 +86,6 @@ class MembersTaskController extends Controller
      */
     public function destroy($id)
     {
-        return $this->membersService->destroyMemberTask($id);
+        return $this->memberService->destroyMemberProject($id);
     }
 }

@@ -6,7 +6,7 @@ use App\Models\Comment;
 use App\Models\UserProjectTask;
 use App\Models\UserProject;
 
-class CommentsService
+class CommentService
 {
     public function store ($request)
     {

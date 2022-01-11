@@ -11,7 +11,7 @@ use App\Models\UserProjectTask;
 use App\Models\Todo_list;
 use App\Models\Comment;
 
-class ProjectsService
+class ProjectService
 {
     public function index()
     {
@@ -62,7 +62,7 @@ class ProjectsService
         Project::find($id)->delete();
         Category::where('id_project', $id)->delete();
         UserProject::where('id_project', $id)->delete();
-        $tasks = Task::where('id_project', $id)->delete();
+        $tasks = Task::where('id_project', $id)->get();
         Comment::where('id_project', $id)->delete();
         foreach ($tasks as $task){
             $id_task = $task->id;

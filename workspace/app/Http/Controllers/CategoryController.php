@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\CategoryService;
 use Illuminate\Http\Request;
-use App\Services\CommentsService;
 
-class CommentsController extends Controller
+class CategoryController extends Controller
 {
-    protected $commentsService;
-    public function __construct(CommentsService $commentsService){
-        $this->commentsService= $commentsService;
+    protected $categoryService;
+
+    public function __construct(CategoryService $categoryService)
+    {
+        $this->categoryService = $categoryService;
     }
     /**
      * Display a listing of the resource.
@@ -18,7 +20,7 @@ class CommentsController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -39,7 +41,7 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->commentsService->store($request);
+        return $this->categoryService->store($request);
     }
 
     /**
@@ -50,7 +52,7 @@ class CommentsController extends Controller
      */
     public function show($id)
     {
-        return $this->commentsService->show($id);
+        return $this->categoryService->show($id);
     }
 
     /**
@@ -61,7 +63,7 @@ class CommentsController extends Controller
      */
     public function edit($id)
     {
-
+        //
     }
 
     /**
@@ -73,7 +75,7 @@ class CommentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $this->commentsService->update($request,$id);
+        return $this->categoryService->update($request, $id);
     }
 
     /**
@@ -84,8 +86,8 @@ class CommentsController extends Controller
      */
     public function destroy($id)
     {
-        return $this->commentsService->destroy($id);
-
+        return $this->categoryService->destroy($id);
     }
-
 }
+
+

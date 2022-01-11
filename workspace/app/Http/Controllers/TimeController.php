@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
-class TimesController extends Controller
+class TimeController extends Controller
 {
     public function update(Request $request, $id)
     {

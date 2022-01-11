@@ -5,14 +5,14 @@ namespace App\Services;
 use App\Models\Category;
 
 
-class CategoriesService
+class CategoryService
 {
     public function update($request, $idCategory)
     {
         $data = $request->only('name');
         $category = Category::find($idCategory);
         $category->update($data);
-        return $data;
+        return $category;
     }
     public function store($request)
     {

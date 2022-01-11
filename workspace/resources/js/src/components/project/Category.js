@@ -4,6 +4,7 @@ import {showTasksAction, storeTaskAction} from "../../redux/actions/tasksAction"
 import { updateNameCategoryAction, deleteCategoryAction } from "../../redux/actions/categoriesAction";
 import FormOperation from "./FormOperation";
 import Task from "./Task";
+import {indexTodosAction} from "../../redux/actions/todoListsAction";
 
 function Category({ category, relativeCss, isInviteUser, todos }){
     const dispatch = useDispatch();
@@ -60,6 +61,7 @@ function Category({ category, relativeCss, isInviteUser, todos }){
             id_category: category.id,
             id_project: category.id_project,
         }));
+        dispatch(indexTodosAction(category.id_project))
         setNewTask('');
         setIsCreateTask(false);
     }

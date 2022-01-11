@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\CategoriesService;
+use App\Services\TaskService;
 use Illuminate\Http\Request;
 
-class CategoriesController extends Controller
+class TaskController extends Controller
 {
-    protected $categoriesService;
-
-    public function __construct(CategoriesService $categoriesService)
+    protected $taskService;
+    public function __construct(TaskService $taskService)
     {
-        $this->categoriesService = $categoriesService;
+        $this->taskService = $taskService;
     }
     /**
      * Display a listing of the resource.
@@ -20,7 +19,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -41,7 +40,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->categoriesService->store($request);
+        return $this->taskService->store($request);
     }
 
     /**
@@ -52,7 +51,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        return $this->categoriesService->show($id);
+        return $this->taskService->show($id);
     }
 
     /**
@@ -63,7 +62,7 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -75,7 +74,7 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $this->categoriesService->update($request, $id);
+        return $this->taskService->update($request, $id);
     }
 
     /**
@@ -86,8 +85,6 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        return $this->categoriesService->destroy($id);
+        return $this->taskService->destroy($id);
     }
 }
-
-

@@ -52,3 +52,4 @@ export const DELETE_MEMBER_PROJECT_SUCCESS = 'delete_member_project_success';
 export const DELETE_MEMBER_TASK_SUCCESS = 'delete_member_task_success;'
 export const NUMBER_DAY_DUE = 1;
 
+export const TIME_DUE = 86400000;

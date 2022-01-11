@@ -7068,7 +7068,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_actions_categoriesAction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../redux/actions/categoriesAction */ "./resources/js/src/redux/actions/categoriesAction.js");
 /* harmony import */ var _FormOperation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FormOperation */ "./resources/js/src/components/project/FormOperation.js");
 /* harmony import */ var _Task__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Task */ "./resources/js/src/components/project/Task.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _redux_actions_todoListsAction__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../redux/actions/todoListsAction */ "./resources/js/src/redux/actions/todoListsAction.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -7080,6 +7081,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -7179,6 +7181,7 @@ function Category(_ref) {
       id_category: category.id,
       id_project: category.id_project
     }));
+    dispatch((0,_redux_actions_todoListsAction__WEBPACK_IMPORTED_MODULE_6__.indexTodosAction)(category.id_project));
     setNewTask('');
     setIsCreateTask(false);
   };
@@ -7192,13 +7195,13 @@ function Category(_ref) {
     setNewTask('');
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "category",
     style: isInviteUser ? {} : relativeCss,
     ref: refCategory,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "header-category d-flex justify-content-between",
-      children: [isChangeNameCate ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+      children: [isChangeNameCate ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
         className: "form-control",
         value: nameCategory,
         autoFocus: true,
@@ -7207,19 +7210,19 @@ function Category(_ref) {
         },
         onKeyDown: updateNameCategory,
         ref: refNameCategory
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
         onClick: function onClick() {
           setIsChangeNameCate(true);
           setNameCategory(category.name);
         },
         children: category.name
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
         className: "fas fa-caret-down",
         onClick: function onClick() {
           return setIsDeleteCategory(true);
         }
       })]
-    }), isDeleteCategory && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_FormOperation__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), isDeleteCategory && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_FormOperation__WEBPACK_IMPORTED_MODULE_4__["default"], {
       exitForm: exitDeleteCategory,
       refForm: refDeleteCategory,
       action: _redux_actions_categoriesAction__WEBPACK_IMPORTED_MODULE_3__.deleteCategoryAction,
@@ -7232,23 +7235,23 @@ function Category(_ref) {
         typeSubmit: "btn btn-danger form-control",
         isInput: false
       }
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "content-category",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "tasks form-group",
         children: [tasks.map(function (item, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Task__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Task__WEBPACK_IMPORTED_MODULE_5__["default"], {
             item: item,
             showDetailTask: showDetailTask,
             todos: todos ? todos.find(function (task) {
               return task.id == item.id;
             }) : []
           }, index);
-        }), isCreateTask && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        }), isCreateTask && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "task",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "title-task",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
               className: "form-control",
               value: newTask,
               placeholder: "Nh\u1EADp ti\xEAu \u0111\u1EC1 cho Task",
@@ -7259,29 +7262,29 @@ function Category(_ref) {
             })
           })
         })]
-      }), isCreateTask ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      }), isCreateTask ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "form-group d-flex",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("button", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("button", {
           className: "btn btn-info form-control add-task",
           onClick: storeTask,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
             className: "far fa-save"
           }), "Save"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("button", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("button", {
           className: "btn btn-danger form-control",
           onClick: exitCreateTask,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
             className: "fas fa-times"
           }), " X\xF3a"]
         })]
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "form-group",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("button", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("button", {
           className: "btn btn-info form-control add-task",
           onClick: function onClick() {
             return setIsCreateTask(true);
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
             className: "fas fa-plus"
           }), "Th\xEAm th\u1EBB"]
         })
@@ -8559,13 +8562,14 @@ function DetailTask() {
       isDeleteTask = _useState22[0],
       setIsDeleteTask = _useState22[1];
 
-  var ratioComplete = 100 * initTask.todo_lists.filter(function (item) {
+  var ratioComplete = initTask.todo_lists.length ? 100 * initTask.todo_lists.filter(function (item) {
     return item.complete == 1;
-  }).length / initTask.todo_lists.length;
+  }).length / initTask.todo_lists.length : 0;
   var refCommenting = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   var refMember = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   var refNameTask = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   var refDelTask = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  console.log(ratioComplete);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     document.addEventListener("click", outSideMember, true);
     document.addEventListener("click", outSideNameTask, true);
@@ -9492,10 +9496,10 @@ var deleteTaskAction = function deleteTaskAction(id) {
   return (0,_commonAction__WEBPACK_IMPORTED_MODULE_1__.getAction)('delete', "api/tasks/".concat(id), requestingTask, deleteTaskSuccess, requestTaskError);
 };
 var updateDescriptionAction = function updateDescriptionAction(id, data) {
-  return (0,_commonAction__WEBPACK_IMPORTED_MODULE_1__.postAction)('put', "api/description/".concat(id), data, requestingTask, updateDescriptionSuccess, requestTaskError);
+  return (0,_commonAction__WEBPACK_IMPORTED_MODULE_1__.postAction)('put', "api/descriptions/".concat(id), data, requestingTask, updateDescriptionSuccess, requestTaskError);
 };
 var updateTimeAction = function updateTimeAction(id, data) {
-  return (0,_commonAction__WEBPACK_IMPORTED_MODULE_1__.postAction)('put', "api/time/".concat(id), data, requestingTask, updateTimeSuccess, requestTaskError);
+  return (0,_commonAction__WEBPACK_IMPORTED_MODULE_1__.postAction)('put', "api/times/".concat(id), data, requestingTask, updateTimeSuccess, requestTaskError);
 };
 var getUserNames = function getUserNames(id) {
   return (0,_commonAction__WEBPACK_IMPORTED_MODULE_1__.getAction)('get', "api/tasks/getUserNames/".concat(id));
@@ -9655,7 +9659,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "STORE_MEMBER_TASK_SUCCESS": () => (/* binding */ STORE_MEMBER_TASK_SUCCESS),
 /* harmony export */   "DELETE_MEMBER_PROJECT_SUCCESS": () => (/* binding */ DELETE_MEMBER_PROJECT_SUCCESS),
 /* harmony export */   "DELETE_MEMBER_TASK_SUCCESS": () => (/* binding */ DELETE_MEMBER_TASK_SUCCESS),
-/* harmony export */   "NUMBER_DAY_DUE": () => (/* binding */ NUMBER_DAY_DUE)
+/* harmony export */   "NUMBER_DAY_DUE": () => (/* binding */ NUMBER_DAY_DUE),
+/* harmony export */   "TIME_DUE": () => (/* binding */ TIME_DUE)
 /* harmony export */ });
 var REQUESTING_PROJECTS = 'requesting_projects';
 var REQUEST_PROJECTS_ERROR = 'request_projects_error';
@@ -9702,6 +9707,7 @@ var STORE_MEMBER_TASK_SUCCESS = 'store_member_task_success';
 var DELETE_MEMBER_PROJECT_SUCCESS = 'delete_member_project_success';
 var DELETE_MEMBER_TASK_SUCCESS = 'delete_member_task_success;';
 var NUMBER_DAY_DUE = 1;
+var TIME_DUE = 86400000;
 
 /***/ }),
 
@@ -10572,7 +10578,11 @@ var updateColorTime = function updateColorTime(current, end, setColorTime) {
   if (current > end) {
     setColorTime("btn-danger");
   } else {
-    setColorTime("btn-primary");
+    if (current.getTime() + _redux_constant__WEBPACK_IMPORTED_MODULE_0__.TIME_DUE > end.getTime()) {
+      setColorTime("btn-warning");
+    } else {
+      setColorTime("btn-primary");
+    }
   }
 };
 

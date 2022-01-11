@@ -27,12 +27,13 @@ function DetailTask(){
     const [isEditNameTask, setIsEditNameTask] = useState(false);
     const [isAddMember, setIsAddMember]= useState(false);
     const [isDeleteTask, setIsDeleteTask] = useState(false);
-    const ratioComplete = 100 * initTask.todo_lists.filter(item=>item.complete==1).length/initTask.todo_lists.length;
+    const ratioComplete = initTask.todo_lists.length ? 100 * initTask.todo_lists.filter(item=>item.complete==1).length/initTask.todo_lists.length:0;
     const refCommenting = useRef();
     const refMember = useRef();
     const refNameTask = useRef();
     const refDelTask = useRef();
 
+    console.log(ratioComplete);
     useEffect(()=>{
         document.addEventListener("click", outSideMember, true);
         document.addEventListener("click", outSideNameTask, true);

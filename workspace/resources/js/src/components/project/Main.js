@@ -77,7 +77,6 @@ function Main(){
             setIsChangeNameProject(false);
         }
     }
-
     const exitFormInvite = ()=>{
         setIsInviteUser(false);
     }

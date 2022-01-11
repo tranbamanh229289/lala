@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\ProjectsService;
+use App\Models\Todo_list;
+use App\Services\TodoListService;
 use Illuminate\Http\Request;
 
-class ProjectsController extends Controller
+class TodoListController extends Controller
 {
-    protected $projectsService;
-
-    public function __construct(ProjectsService $projectsService)
+    protected $todoListService;
+    public function __construct(TodoListService $todoListService)
     {
-        $this->projectsService = $projectsService;
+        $this->todoListService = $todoListService;
     }
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        return $this->projectsService->index();
+        //
     }
 
     /**
@@ -41,7 +41,7 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->projectsService->store($request);
+        return $this->todoListService->store($request);
     }
 
     /**
@@ -52,7 +52,7 @@ class ProjectsController extends Controller
      */
     public function show($id)
     {
-        return $this->projectsService->show($id);
+        return $this->todoListService->show($id);
     }
 
     /**
@@ -63,7 +63,7 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -73,9 +73,9 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $idProject)
+    public function update(Request $request, $id)
     {
-        return $this->projectsService->update($request, $idProject);
+        return $this->todoListService->update($request, $id);
     }
 
     /**
@@ -86,6 +86,6 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        return $this->projectsService->destroy($id);
+        return $this->todoListService->destroy($id);
     }
 }

@@ -15,11 +15,11 @@ export const deleteMemberProjectSuccess = (data) =>requestSuccess(data, DELETE_M
 export const storeMemberTaskSuccess = (data) =>requestSuccess(data, STORE_MEMBER_TASK_SUCCESS);
 export const deleteMemberTaskSuccess = (data) =>requestSuccess(data, DELETE_MEMBER_TASK_SUCCESS);
 
-export const storeMemberProjectAction = (data)=> postAction('post', 'api/member/projects', data,requestingMember,
+export const storeMemberProjectAction = (data)=> postAction('post', 'api/project/members', data,requestingMember,
     storeMemberProjectSuccess, requestMemberError);
-export const deleteMemberProjectAction = (id)=> getAction('delete', `api/member/projects/${id}`, requestingMember,
+export const deleteMemberProjectAction = (id)=> getAction('delete', `api/project/members/${id}`, requestingMember,
     deleteMemberProjectSuccess, requestMemberError);
-export const storeMemberTaskAction = (data)=> postAction('post', 'api/member/task', data,requestingMember,
+export const storeMemberTaskAction = (data)=> postAction('post', 'api/task/members', data,requestingMember,
     storeMemberTaskSuccess, requestMemberError);
-export const deleteMemberTaskAction = (id)=> getAction('delete', `api/member/task/${id}`,requestingMember,
+export const deleteMemberTaskAction = (id)=> getAction('delete', `api/task/members/${id}`,requestingMember,
     deleteMemberTaskSuccess, requestMemberError);

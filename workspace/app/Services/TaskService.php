@@ -6,12 +6,12 @@ use App\Models\Comment;
 use App\Models\Task;
 use App\Models\Todo_list;
 use App\Models\UserProjectTask;
-use App\Services\ProjectsService;
+use App\Services\ProjectService;
 
-class TasksService
+class TaskService
 {
     public $projectsService;
-    public function __construct(ProjectsService $projectsService){
+    public function __construct(ProjectService $projectsService){
         $this->projectsService=$projectsService;
     }
 
