@@ -20,6 +20,8 @@ function Time({ start, end, idTask }){
     const changeTime = (start, end, type="yyyy-mm-dd HH:MM:SS")=> {
         if(start>end){
             start.setDate(end.getDate()-1);
+            start.setMonth(end.getMonth());
+            start.setFullYear(end.getFullYear());
         }
         updateColorTime(new Date(), end, setColorTime);
         start = formatDatetime(start, type);

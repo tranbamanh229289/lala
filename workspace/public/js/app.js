@@ -8254,6 +8254,8 @@ function Time(_ref) {
 
     if (start > end) {
       start.setDate(end.getDate() - 1);
+      start.setMonth(end.getMonth());
+      start.setFullYear(end.getFullYear());
     }
 
     (0,_service_helpers_setColorTime__WEBPACK_IMPORTED_MODULE_6__["default"])(new Date(), end, setColorTime);
