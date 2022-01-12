@@ -8256,9 +8256,7 @@ function Time(_ref) {
     var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "yyyy-mm-dd HH:MM:SS";
 
     if (start > end) {
-      start.setDate(end.getDate() - 1);
-      start.setMonth(end.getMonth());
-      start.setFullYear(end.getFullYear());
+      end.setTime(start.getTime() + _redux_constant__WEBPACK_IMPORTED_MODULE_5__.TIME_DUE);
     }
 
     (0,_service_helpers_setColorTime__WEBPACK_IMPORTED_MODULE_6__["default"])(new Date(), end, setColorTime);

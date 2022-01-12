@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import DatePicker from "react-datepicker";
 import formatDatetime from "../../service/helpers/formatDatetime";
 import { updateTimeAction } from "../../redux/actions/tasksAction";
-import { NUMBER_DAY_DUE } from "../../redux/constant";
+import {NUMBER_DAY_DUE, TIME_DUE} from "../../redux/constant";
 import updateColorTime from "../../service/helpers/setColorTime";
 
 function Time({ start, end, idTask }){
@@ -19,9 +19,7 @@ function Time({ start, end, idTask }){
 
     const changeTime = (start, end, type="yyyy-mm-dd HH:MM:SS")=> {
         if(start>end){
-            start.setDate(end.getDate()-1);
-            start.setMonth(end.getMonth());
-            start.setFullYear(end.getFullYear());
+            end.setTime(start.getTime()+TIME_DUE);
         }
         updateColorTime(new Date(), end, setColorTime);
         start = formatDatetime(start, type);
